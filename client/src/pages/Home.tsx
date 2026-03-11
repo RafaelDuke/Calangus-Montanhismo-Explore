@@ -12,7 +12,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="Calangus Montanhismo Logo" className="h-10 w-10 object-contain" />
+            <img src="/logo2.jpg" alt="Calangus Montanhismo Logo" className="h-10 w-10 object-contain rounded" />
             <span className="font-heading font-bold text-xl tracking-tight text-primary">
               CALANGUS<span className="text-accent">.</span>
             </span>
@@ -37,7 +37,7 @@ export default function Home() {
         <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img 
-              src="/hero.jpg" 
+              src="/paginainicial.jpg" 
               alt="Rio de Janeiro Montanhas" 
               className="w-full h-full object-cover object-center"
             />
@@ -74,14 +74,15 @@ export default function Home() {
                   adrenalina e a magia das nossas serras, florestas e picos rochosos.
                 </p>
                 <p>
-                  Unimos a emoção do <strong className="text-primary">Ecoturismo de Aventura</strong> com segurança rigorosa e 
-                  respeito absoluto ao meio ambiente. Cada trilha, cada rapel, cada acampamento é planejado dentro dos rigorosos 
-                  padrões de <strong className="text-primary">conduta de mínimo impacto</strong>. Acreditamos que verdadeira aventura 
-                  é aquela que deixa a natureza intacta para as gerações futuras.
+                  Nossa missão é oferecer experiências autênticas de <strong className="text-primary">Ecoturismo de Aventura</strong>, 
+                  onde <strong className="text-accent">segurança rigorosa</strong> e <strong className="text-accent">instrução técnica</strong> são 
+                  pilares inegociáveis. Cada expedição é planejada e executada com os mais altos padrões de profissionalismo, 
+                  garantindo que você vivencie a adrenalina da aventura com total confiança em nossos guias e procedimentos.
                 </p>
                 <p>
-                  O grupo Calangus Montanhismo é sinônimo de confiança, experiência e amor incondicional pelas montanhas. Venha 
-                  explorar conosco o Rio por novos ângulos — com segurança, sustentabilidade e muito espírito de aventura.
+                  Unimos a emoção pura da aventura em montanha com <strong className="text-primary">respeito absoluto ao meio ambiente</strong>. 
+                  A conduta de mínimo impacto não é apenas um protocolo — é nossa filosofia. Acreditamos que verdadeira aventura 
+                  é aquela que deixa a natureza intacta para as gerações futuras.
                 </p>
               </div>
             </div>
@@ -121,14 +122,14 @@ export default function Home() {
               <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow group">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
-                    src="/rafael.jpg" 
+                    src="/guiarafael.jpg" 
                     alt="Rafael Dias Seabra" 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <CardHeader className="text-center pb-2">
                   <CardTitle className="text-2xl font-bold font-heading">Rafael Dias Seabra</CardTitle>
-                  <CardDescription className="text-accent font-semibold">Guia Regional e Vigilante</CardDescription>
+                  <CardDescription className="text-accent font-semibold">Guia Regional e Instrutor de Rapel</CardDescription>
                 </CardHeader>
                 <CardContent className="text-center text-muted-foreground">
                   <div className="space-y-2">
@@ -146,7 +147,7 @@ export default function Home() {
               <Card className="overflow-hidden border-none shadow-lg hover:shadow-xl transition-shadow group">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
-                    src="/ana.jpg" 
+                    src="/guiaana.jpg" 
                     alt="Ana Lucia Barbosa da Silva" 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -238,16 +239,16 @@ export default function Home() {
                 <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
                   <img 
                     src="/foto1.jpg" 
-                    alt="Foto de Aventura 1" 
+                    alt="Escalavrado" 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Foto 1</span></div>';
+                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Escalavrado</span></div>';
                     }}
                   />
                 </div>
                 <div className="bg-card p-4 border-t">
-                  <p className="text-center text-muted-foreground text-sm">Trilha Clássica - Pico da Tijuca</p>
+                  <p className="text-center text-muted-foreground text-sm">Escalavrado</p>
                 </div>
               </div>
 
@@ -256,16 +257,16 @@ export default function Home() {
                 <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
                   <img 
                     src="/foto2.jpg" 
-                    alt="Foto de Aventura 2" 
+                    alt="Pico da Caledônia" 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Foto 2</span></div>';
+                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Pico da Caledônia</span></div>';
                     }}
                   />
                 </div>
                 <div className="bg-card p-4 border-t">
-                  <p className="text-center text-muted-foreground text-sm">Rapel na Serra da Carioca</p>
+                  <p className="text-center text-muted-foreground text-sm">Pico da Caledônia</p>
                 </div>
               </div>
 
@@ -274,16 +275,16 @@ export default function Home() {
                 <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
                   <img 
                     src="/foto3.jpg" 
-                    alt="Foto de Aventura 3" 
+                    alt="Teresópolis" 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Foto 3</span></div>';
+                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Teresópolis</span></div>';
                     }}
                   />
                 </div>
                 <div className="bg-card p-4 border-t">
-                  <p className="text-center text-muted-foreground text-sm">Acampamento com Vista Panorâmica</p>
+                  <p className="text-center text-muted-foreground text-sm">Teresópolis</p>
                 </div>
               </div>
 
@@ -292,16 +293,16 @@ export default function Home() {
                 <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
                   <img 
                     src="/foto4.jpg" 
-                    alt="Foto de Aventura 4" 
+                    alt="Pedra Bonita" 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Foto 4</span></div>';
+                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Pedra Bonita</span></div>';
                     }}
                   />
                 </div>
                 <div className="bg-card p-4 border-t">
-                  <p className="text-center text-muted-foreground text-sm">Grupo em Trekking - Floresta da Tijuca</p>
+                  <p className="text-center text-muted-foreground text-sm">Pedra Bonita</p>
                 </div>
               </div>
 
@@ -310,16 +311,16 @@ export default function Home() {
                 <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
                   <img 
                     src="/foto5.jpg" 
-                    alt="Foto de Aventura 5" 
+                    alt="Rapel Cachoeira do Mendanha" 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Foto 5</span></div>';
+                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Rapel Cachoeira do Mendanha</span></div>';
                     }}
                   />
                 </div>
                 <div className="bg-card p-4 border-t">
-                  <p className="text-center text-muted-foreground text-sm">Descida em Rapel Técnico</p>
+                  <p className="text-center text-muted-foreground text-sm">Rapel Cachoeira do Mendanha</p>
                 </div>
               </div>
 
@@ -328,16 +329,16 @@ export default function Home() {
                 <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden relative">
                   <img 
                     src="/foto6.jpg" 
-                    alt="Foto de Aventura 6" 
+                    alt="Rapel Barra de Guaratiba" 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Foto 6</span></div>';
+                      e.currentTarget.parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center"><span class="text-muted-foreground">Rapel Barra de Guaratiba</span></div>';
                     }}
                   />
                 </div>
                 <div className="bg-card p-4 border-t">
-                  <p className="text-center text-muted-foreground text-sm">Nascer do Sol na Montanha</p>
+                  <p className="text-center text-muted-foreground text-sm">Rapel Barra de Guaratiba</p>
                 </div>
               </div>
             </div>
