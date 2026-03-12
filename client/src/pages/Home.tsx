@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background scroll-smooth">
       {/* 1. Cabeçalho com Logo */}
-      <header className="fixed top-0 z-50 w-full bg-[#e8f5e9] border-b border-[#c8e6c9] shadow-sm transition-all duration-300">
+      <header className="fixed top-0 z-50 w-full bg-[#dcfce7] border-b border-[#bbf7d0] shadow-sm transition-all duration-300">
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img src="/novalogocalangus.jpg" alt="Calangus Montanhismo Logo" className="h-14 w-auto object-contain rounded-md" />
