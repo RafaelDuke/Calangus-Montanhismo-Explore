@@ -17,6 +17,9 @@ export default function Home() {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img src="/novalogocalangus.jpg" alt="Calangus Montanhismo Logo" className="h-12 w-auto object-contain" />
+            <span className="font-heading font-bold text-lg tracking-tight text-primary hidden sm:inline">
+              Calangus Montanhismo
+            </span>
           </div>
           <nav className="hidden md:flex gap-6">
             <a href="#sobre" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Sobre</a>
@@ -65,12 +68,14 @@ export default function Home() {
       <main>
         {/* 2. Hero - Background Image Only */}
         <section 
-          className="relative h-screen flex items-center justify-center overflow-hidden"
+          className="relative flex items-center justify-center overflow-hidden"
           style={{
             backgroundImage: 'url(/paginainicial.jpg)',
-            backgroundSize: 'cover',
+            backgroundSize: 'contain',
             backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed',
+            height: '600px'
           }}
         >
           <div className="absolute inset-0 bg-black/20" />
@@ -381,7 +386,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-foreground py-8 text-center text-muted">
         <div className="container mx-auto px-4">
-          <p>© {new Date().getFullYear()} Calangus Montanhismo. Todos os direitos reservados.</p>
+          <p>Guias Cadastur: Rafael Dias e Ana Lúcia</p>
         </div>
       </footer>
 
