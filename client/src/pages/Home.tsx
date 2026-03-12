@@ -68,17 +68,18 @@ export default function Home() {
       <main>
         {/* 2. Hero - Background Image Only */}
         <section 
-          className="relative flex items-center justify-center overflow-hidden"
+          className="relative w-full flex items-center justify-center"
           style={{
             backgroundImage: 'url(/paginainicial.jpg)',
             backgroundSize: 'contain',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'fixed',
-            height: '600px'
+            minHeight: '800px',
+            backgroundColor: '#f5f5f5'
           }}
         >
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-black/10" />
         </section>
 
         {/* 3. Seção Sobre */}
