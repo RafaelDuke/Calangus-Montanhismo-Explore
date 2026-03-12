@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background scroll-smooth">
-      {/* 1. Cabeçalho com Logo */}
+      {/* 1. Cabeçalho com Logo e Menu Mobile */}
       <header 
         className="fixed top-0 z-50 w-full border-b shadow-md transition-all duration-300"
         style={{ backgroundColor: '#e6f4ea', borderColor: '#c8e6c9' }}
@@ -20,10 +20,12 @@ export default function Home() {
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img src="/novalogocalangus.jpg" alt="Calangus Montanhismo Logo" className="h-14 w-auto object-contain rounded-md" />
-            <span className="font-heading font-extrabold text-xl tracking-tight text-[#000000]">
+            <span className="font-heading font-extrabold text-xl tracking-tight text-[#000000] hidden sm:inline">
               Calangus Montanhismo
             </span>
           </div>
+          
+          {/* Menu Desktop */}
           <nav className="hidden lg:flex gap-8">
             <a href="#sobre" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Sobre</a>
             <a href="#ecoturismo" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Ecoturismo</a>
@@ -32,8 +34,8 @@ export default function Home() {
             <a href="#galeria" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Galeria</a>
           </nav>
           
-          {/* Menu de Contato Superior */}
-          <div className="hidden md:relative md:flex md:items-center">
+          {/* Botão de Contato Desktop */}
+          <div className="hidden lg:relative lg:flex lg:items-center">
             <button
               onClick={() => setHeaderContactOpen(!headerContactOpen)}
               className="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -66,34 +68,67 @@ export default function Home() {
               </div>
             )}
           </div>
+
+          {/* Menu Hambúrguer Mobile */}
+          <div className="lg:hidden flex items-center">
+            <button 
+              onClick={() => setHeaderContactOpen(!headerContactOpen)}
+              className="p-2 text-[#000000]"
+              aria-label="Abrir menu"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round">
+                <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
         </div>
+
+        {/* Dropdown Menu Mobile */}
+        {headerContactOpen && (
+          <div className="lg:hidden absolute top-full left-0 w-full bg-[#e6f4ea] border-b border-[#c8e6c9] shadow-lg animate-in slide-in-from-top-2">
+            <div className="flex flex-col px-4 py-6 space-y-4">
+              <a href="#sobre" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Sobre</a>
+              <a href="#ecoturismo" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Ecoturismo</a>
+              <a href="#equipe" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Equipe</a>
+              <a href="#servicos" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Serviços</a>
+              <a href="#galeria" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Galeria</a>
+              
+              <div className="pt-4 flex flex-col gap-3">
+                <a href={rafaelWhatsapp} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3 px-6 rounded-full w-full">
+                  <MessageCircle className="w-5 h-5" />
+                  Falar com Rafael
+                </a>
+                <a href={anaWhatsapp} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3 px-6 rounded-full w-full">
+                  <MessageCircle className="w-5 h-5" />
+                  Falar com Ana
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
 
       <main className="pt-20">
-        {/* 2. Hero - Background Image Only */}
+        {/* 2. Hero - Responsivo */}
         <section 
-          className="relative w-full flex items-center justify-center"
-          style={{
-            backgroundImage: 'url(/paginainicial.jpg)',
-            backgroundSize: 'contain',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: '#000000',
-            aspectRatio: '16/9',
-            maxHeight: 'calc(100vh - 80px)'
-          }}
+          className="relative w-full flex flex-col items-center justify-center bg-black"
+          style={{ minHeight: 'calc(100vh - 80px)' }}
         >
-          {/* Removido overlay escuro para não ofuscar a arte */}
+          <img 
+            src="/paginainicial.jpg" 
+            alt="Calangus Montanhismo"
+            className="w-full h-auto max-h-[calc(100vh-80px)] object-contain"
+          />
         </section>
 
         {/* 3. Seção Sobre */}
-        <section id="sobre" className="min-h-screen flex items-center py-24 bg-card border-b">
-          <div className="container mx-auto px-4">
+        <section id="sobre" className="min-h-screen flex items-center py-16 md:py-24 bg-card border-b px-5 md:px-0">
+          <div className="container mx-auto">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-8 text-center">
+              <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-8 text-center">
                 Sobre a Calangus Montanhismo
               </h2>
-              <div className="prose prose-lg text-muted-foreground space-y-6 text-justify">
+              <div className="prose prose-lg md:prose-xl text-muted-foreground space-y-6 text-justify">
                 <p>
                   A <strong className="text-primary">Calangus Montanhismo</strong> nasceu da paixão genuína pelas montanhas do Rio de Janeiro. 
                   Somos mais do que uma agência de aventura — somos um coletivo de exploradores dedicados a compartilhar a 
@@ -116,14 +151,14 @@ export default function Home() {
         </section>
 
         {/* 4. Ecoturismo de Aventura */}
-        <section id="ecoturismo" className="min-h-screen flex items-center py-24 bg-muted/50 bg-pattern">
-          <div className="container mx-auto px-4">
+        <section id="ecoturismo" className="min-h-screen flex items-center py-16 md:py-24 bg-muted/50 bg-pattern px-5 md:px-0">
+          <div className="container mx-auto">
             <div className="max-w-3xl mx-auto text-center">
               <Leaf className="w-12 h-12 text-primary mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-6">
                 Ecoturismo de Aventura
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-xl md:text-lg text-muted-foreground leading-relaxed text-justify md:text-center">
                 No coração de cada expedição Calangus está nosso compromisso inabalável com a natureza. Não deixamos nada além 
                 de pegadas, não tiramos nada além de fotos e não levamos nada além de memórias. Nossos protocolos de mínimo impacto 
                 garantem que as montanhas que exploramos hoje estarão íntegras para os aventureiros de amanhã. Adrenalina responsável 
@@ -134,10 +169,10 @@ export default function Home() {
         </section>
 
         {/* 5. Cards de Guias */}
-        <section id="equipe" className="min-h-screen flex items-center py-24">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-4">
+        <section id="equipe" className="min-h-screen flex items-center py-16 md:py-24 px-5 md:px-0">
+          <div className="container mx-auto">
+            <div className="text-center mb-16 md:mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-4">
                 Nossos Guias
               </h2>
               <p className="text-muted-foreground text-lg">Especialistas apaixonados pelas montanhas cariocas.</p>
@@ -214,16 +249,16 @@ export default function Home() {
         </section>
 
         {/* 6. Serviços */}
-        <section id="servicos" className="min-h-screen flex items-center py-24 bg-primary text-primary-foreground relative overflow-hidden">
+        <section id="servicos" className="min-h-screen flex items-center py-16 md:py-24 bg-primary text-primary-foreground relative overflow-hidden px-5 md:px-0">
           {/* Decorative background element */}
           <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMSI+PHBhdGggZD0iTTM2IDM0di00aC0ydjRoLTR2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjBoLTJ2NGgtNHYyaDR2NGgyVjZoNFY0aC00ek02IDM0di00SDR2NEgwdjJoNHY0aDJ2LTRoNHYtMkg2ek02IDRWMEg0djRIMHYyaDR2NGgyVjZoNFY0SDZ6Ii8+PC9nPjwvZz48L3N2Zz4=')]"></div>
           
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">
+          <div className="container mx-auto relative z-10">
+            <div className="text-center mb-16 md:mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4 text-white">
                 Nossos Serviços
               </h2>
-              <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
+              <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto">
                 Do trekking leve à aventura vertical, temos a experiência certa para você.
               </p>
             </div>
@@ -269,13 +304,13 @@ export default function Home() {
         </section>
 
         {/* 7. Galeria de Fotos */}
-        <section id="galeria" className="min-h-screen flex items-center py-24 bg-muted/50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-20">
-              <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-4">
+        <section id="galeria" className="min-h-screen flex items-center py-16 md:py-24 bg-muted/50 px-5 md:px-0">
+          <div className="container mx-auto">
+            <div className="text-center mb-16 md:mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-4">
                 Galeria de Aventuras
               </h2>
-              <p className="text-muted-foreground text-lg">Momentos capturados nas montanhas do Rio de Janeiro.</p>
+              <p className="text-muted-foreground text-lg md:text-xl">Momentos capturados nas montanhas do Rio de Janeiro.</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
