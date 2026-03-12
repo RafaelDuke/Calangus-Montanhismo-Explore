@@ -389,9 +389,8 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-foreground py-8 text-center">
+      <footer className="bg-foreground py-4 text-center">
         <div className="container mx-auto px-4">
-          <p className="text-muted text-sm">© {new Date().getFullYear()} Calangus Montanhismo. Todos os direitos reservados.</p>
         </div>
       </footer>
 
