@@ -11,32 +11,33 @@ export default function Home() {
   const anaWhatsapp = "https://wa.me/5521992438692";
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background scroll-smooth">
       {/* 1. Cabeçalho com Logo */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+      <header className="fixed top-0 z-50 w-full bg-black/10 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/novalogocalangus.jpg" alt="Calangus Montanhismo Logo" className="h-12 w-auto object-contain" />
-            <span className="font-heading font-bold text-lg tracking-tight text-primary hidden sm:inline">
+            <img src="/novalogocalangus.jpg" alt="Calangus Montanhismo Logo" className="h-14 w-auto object-contain rounded-md" />
+            <span className="font-heading font-bold text-xl tracking-tight text-white drop-shadow-md hidden sm:inline">
               Calangus Montanhismo
             </span>
           </div>
-          <nav className="hidden md:flex gap-6">
-            <a href="#sobre" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Sobre</a>
-            <a href="#ecoturismo" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Ecoturismo</a>
-            <a href="#equipe" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Equipe</a>
-            <a href="#servicos" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Serviços</a>
-            <a href="#galeria" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Galeria</a>
+          <nav className="hidden lg:flex gap-8">
+            <a href="#sobre" className="text-base font-bold uppercase text-white hover:text-accent transition-colors drop-shadow-md">Sobre</a>
+            <a href="#ecoturismo" className="text-base font-bold uppercase text-white hover:text-accent transition-colors drop-shadow-md">Ecoturismo</a>
+            <a href="#equipe" className="text-base font-bold uppercase text-white hover:text-accent transition-colors drop-shadow-md">Equipe</a>
+            <a href="#servicos" className="text-base font-bold uppercase text-white hover:text-accent transition-colors drop-shadow-md">Serviços</a>
+            <a href="#galeria" className="text-base font-bold uppercase text-white hover:text-accent transition-colors drop-shadow-md">Galeria</a>
           </nav>
           
           {/* Menu de Contato Superior */}
           <div className="hidden md:relative md:flex md:items-center">
             <button
               onClick={() => setHeaderContactOpen(!headerContactOpen)}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-2 px-4 rounded-lg flex items-center gap-2 transition-colors"
+              className="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-full flex items-center gap-2 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              Contato
-              <ChevronDown className={`w-4 h-4 transition-transform ${headerContactOpen ? 'rotate-180' : ''}`} />
+              <MessageCircle className="w-5 h-5" />
+              CONTATO
+              <ChevronDown className={`w-5 h-5 transition-transform ${headerContactOpen ? 'rotate-180' : ''}`} />
             </button>
             
             {headerContactOpen && (
@@ -65,7 +66,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main>
+      <main className="pt-20">
         {/* 2. Hero - Background Image Only */}
         <section 
           className="relative w-full flex items-center justify-center"
@@ -74,20 +75,22 @@ export default function Home() {
             backgroundSize: 'contain',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
-            minHeight: '800px',
-            backgroundColor: '#f5f5f5'
+            backgroundColor: '#000000',
+            aspectRatio: '16/9',
+            maxHeight: 'calc(100vh - 80px)'
           }}
         >
-          <div className="absolute inset-0 bg-black/10" />
+          {/* Removido overlay escuro para não ofuscar a arte */}
           {/* Rodapé posicionado sobre o pergaminho */}
-          <div className="absolute bottom-12 left-0 right-0 text-center">
-            <p className="font-heading font-bold text-lg text-gray-900 drop-shadow-md">Guias Cadastur: Rafael Dias e Ana Lúcia</p>
+          <div className="absolute bottom-[5%] left-0 right-0 text-center px-4">
+            <p className="font-heading font-extrabold text-xs sm:text-sm md:text-lg lg:text-xl text-[#2d2d2d] drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)] tracking-wide">
+              Guias Cadastur: Rafael Dias e Ana Lúcia
+            </p>
           </div>
         </section>
 
         {/* 3. Seção Sobre */}
-        <section id="sobre" className="py-20 bg-card border-b">
+        <section id="sobre" className="min-h-screen flex items-center py-24 bg-card border-b">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-8 text-center">
@@ -116,7 +119,7 @@ export default function Home() {
         </section>
 
         {/* 4. Ecoturismo de Aventura */}
-        <section id="ecoturismo" className="py-20 bg-muted/50 bg-pattern">
+        <section id="ecoturismo" className="min-h-screen flex items-center py-24 bg-muted/50 bg-pattern">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <Leaf className="w-12 h-12 text-primary mx-auto mb-6" />
@@ -134,9 +137,9 @@ export default function Home() {
         </section>
 
         {/* 5. Cards de Guias */}
-        <section id="equipe" className="py-20">
+        <section id="equipe" className="min-h-screen flex items-center py-24">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-20">
               <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-4">
                 Nossos Guias
               </h2>
@@ -214,9 +217,12 @@ export default function Home() {
         </section>
 
         {/* 6. Serviços */}
-        <section id="servicos" className="py-20 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+        <section id="servicos" className="min-h-screen flex items-center py-24 bg-primary text-primary-foreground relative overflow-hidden">
+          {/* Decorative background element */}
+          <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMSI+PHBhdGggZD0iTTM2IDM0di00aC0ydjRoLTR2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjBoLTJ2NGgtNHYyaDR2NGgyVjZoNFY0aC00ek02IDM0di00SDR2NEgwdjJoNHY0aDJ2LTRoNHYtMkg2ek02IDRWMEg0djRIMHYyaDR2NGgyVjZoNFY0SDZ6Ii8+PC9nPjwvZz48L3N2Zz4=')]"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-20">
               <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">
                 Nossos Serviços
               </h2>
@@ -266,9 +272,9 @@ export default function Home() {
         </section>
 
         {/* 7. Galeria de Fotos */}
-        <section id="galeria" className="py-20 bg-muted/50">
+        <section id="galeria" className="min-h-screen flex items-center py-24 bg-muted/50">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-20">
               <h2 className="text-3xl md:text-4xl font-bold font-heading text-foreground mb-4">
                 Galeria de Aventuras
               </h2>
