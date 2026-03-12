@@ -1,21 +1,21 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { MessageCircle, Leaf, Mountain, Tent, ArrowDownToDot, MapPin } from "lucide-react";
+import { MessageCircle, Leaf, Mountain, Tent, ArrowDownToDot, MapPin, X } from "lucide-react";
 
 export default function Home() {
-  const whatsappNumber = "5521999999999"; // Exemplo
-  const whatsappLink = `https://wa.me/${whatsappNumber}`;
+  const [whatsappMenuOpen, setWhatsappMenuOpen] = useState(false);
+
+  const rafaelWhatsapp = "https://wa.me/5521965116992";
+  const anaWhatsapp = "https://wa.me/5521992438692";
 
   return (
     <div className="min-h-screen bg-background">
       {/* 1. Cabeçalho com Logo */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <img src="/logo2.jpg" alt="Calangus Montanhismo Logo" className="h-10 w-10 object-contain rounded" />
-            <span className="font-heading font-bold text-xl tracking-tight text-primary">
-              CALANGUS<span className="text-accent">.</span>
-            </span>
+          <div className="flex items-center gap-3">
+            <img src="/novalogocalangus.png" alt="Calangus Montanhismo Logo" className="h-12 w-auto object-contain" />
           </div>
           <nav className="hidden md:flex gap-6">
             <a href="#sobre" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Sobre</a>
@@ -25,7 +25,7 @@ export default function Home() {
             <a href="#galeria" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Galeria</a>
           </nav>
           <Button asChild variant="default" className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground">
-            <a href={whatsappLink} target="_blank" rel="noreferrer">
+            <a href={rafaelWhatsapp} target="_blank" rel="noreferrer">
               Contato
             </a>
           </Button>
@@ -33,31 +33,17 @@ export default function Home() {
       </header>
 
       <main>
-        {/* 2. Hero */}
-        <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <img 
-              src="/paginainicial.jpg" 
-              alt="Rio de Janeiro Montanhas" 
-              className="w-full h-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-black/40" />
-          </div>
-          
-          <div className="container relative z-10 mx-auto px-4 text-center text-white">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold font-heading mb-6 drop-shadow-lg max-w-4xl mx-auto leading-tight">
-              Explore o Rio de Janeiro por novos ângulos
-            </h1>
-            <p className="text-lg md:text-2xl mb-10 font-medium drop-shadow-md max-w-2xl mx-auto text-white/90">
-              Experiências autênticas de montanhismo e aventura com segurança e respeito à natureza.
-            </p>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold text-lg px-8 py-6 rounded-full shadow-lg transition-transform hover:scale-105" asChild>
-              <a href={whatsappLink} target="_blank" rel="noreferrer">
-                <MessageCircle className="mr-2 h-6 w-6" />
-                Agendar Aventura
-              </a>
-            </Button>
-          </div>
+        {/* 2. Hero - Background Image Only */}
+        <section 
+          className="relative h-screen flex items-center justify-center overflow-hidden"
+          style={{
+            backgroundImage: 'url(/pagina-inicial.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/20" />
         </section>
 
         {/* 3. Seção Sobre */}
@@ -131,7 +117,7 @@ export default function Home() {
                   <CardTitle className="text-2xl font-bold font-heading">Rafael Dias Seabra</CardTitle>
                   <CardDescription className="text-accent font-semibold">Guia Regional e Instrutor de Rapel</CardDescription>
                 </CardHeader>
-                <CardContent className="text-center text-muted-foreground">
+                <CardContent className="text-center text-muted-foreground mb-4">
                   <div className="space-y-2">
                     <p className="text-sm">Especialidades:</p>
                     <div className="flex flex-wrap gap-2 justify-center">
@@ -141,6 +127,14 @@ export default function Home() {
                     </div>
                   </div>
                 </CardContent>
+                <CardFooter className="flex justify-center">
+                  <Button asChild className="bg-[#25D366] hover:bg-[#1ca544] text-white">
+                    <a href={rafaelWhatsapp} target="_blank" rel="noreferrer">
+                      <MessageCircle className="mr-2 h-4 w-4" />
+                      Falar com Rafael
+                    </a>
+                  </Button>
+                </CardFooter>
               </Card>
 
               {/* Card Ana */}
@@ -156,7 +150,7 @@ export default function Home() {
                   <CardTitle className="text-2xl font-bold font-heading">Ana Lucia Barbosa</CardTitle>
                   <CardDescription className="text-accent font-semibold">Guia Nacional e Técnica em Enfermagem</CardDescription>
                 </CardHeader>
-                <CardContent className="text-center text-muted-foreground">
+                <CardContent className="text-center text-muted-foreground mb-4">
                   <div className="space-y-2">
                     <p className="text-sm">Especialidades:</p>
                     <div className="flex flex-wrap gap-2 justify-center">
@@ -166,6 +160,14 @@ export default function Home() {
                     </div>
                   </div>
                 </CardContent>
+                <CardFooter className="flex justify-center">
+                  <Button asChild className="bg-[#25D366] hover:bg-[#1ca544] text-white">
+                    <a href={anaWhatsapp} target="_blank" rel="noreferrer">
+                      <MessageCircle className="mr-2 h-4 w-4" />
+                      Falar com Ana
+                    </a>
+                  </Button>
+                </CardFooter>
               </Card>
             </div>
           </div>
@@ -353,16 +355,43 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Botão flutuante de WhatsApp */}
-      <a 
-        href={whatsappLink}
-        target="_blank" 
-        rel="noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center"
-        aria-label="Contato pelo WhatsApp"
-      >
-        <MessageCircle className="w-8 h-8" />
-      </a>
+      {/* Menu Flutuante de WhatsApp */}
+      <div className="fixed bottom-6 right-6 z-50">
+        {whatsappMenuOpen && (
+          <div className="absolute bottom-20 right-0 flex flex-col gap-2 bg-white rounded-2xl shadow-2xl p-2 border border-gray-200 animate-in fade-in slide-in-from-bottom-4">
+            <a
+              href={rafaelWhatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Falar com Rafael
+            </a>
+            <a
+              href={anaWhatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Falar com Ana
+            </a>
+          </div>
+        )}
+        
+        <button
+          onClick={() => setWhatsappMenuOpen(!whatsappMenuOpen)}
+          className="bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center w-16 h-16"
+          aria-label="Menu de Contato"
+        >
+          {whatsappMenuOpen ? (
+            <X className="w-8 h-8" />
+          ) : (
+            <MessageCircle className="w-8 h-8" />
+          )}
+        </button>
+      </div>
     </div>
   );
 }
