@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { MessageCircle, Leaf, Mountain, Tent, ArrowDownToDot, MapPin, X } from "lucide-react";
+import { MessageCircle, Leaf, Mountain, Tent, ArrowDownToDot, MapPin, X, ChevronDown } from "lucide-react";
 
 export default function Home() {
   const [whatsappMenuOpen, setWhatsappMenuOpen] = useState(false);
+  const [headerContactOpen, setHeaderContactOpen] = useState(false);
 
   const rafaelWhatsapp = "https://wa.me/5521965116992";
   const anaWhatsapp = "https://wa.me/5521992438692";
@@ -15,7 +16,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/novalogocalangus.png" alt="Calangus Montanhismo Logo" className="h-12 w-auto object-contain" />
+            <img src="/novalogocalangus.jpg" alt="Calangus Montanhismo Logo" className="h-12 w-auto object-contain" />
           </div>
           <nav className="hidden md:flex gap-6">
             <a href="#sobre" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Sobre</a>
@@ -24,11 +25,40 @@ export default function Home() {
             <a href="#servicos" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Serviços</a>
             <a href="#galeria" className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Galeria</a>
           </nav>
-          <Button asChild variant="default" className="hidden md:inline-flex bg-primary hover:bg-primary/90 text-primary-foreground">
-            <a href={rafaelWhatsapp} target="_blank" rel="noreferrer">
+          
+          {/* Menu de Contato Superior */}
+          <div className="hidden md:relative md:flex md:items-center">
+            <button
+              onClick={() => setHeaderContactOpen(!headerContactOpen)}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-2 px-4 rounded-lg flex items-center gap-2 transition-colors"
+            >
               Contato
-            </a>
-          </Button>
+              <ChevronDown className={`w-4 h-4 transition-transform ${headerContactOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {headerContactOpen && (
+              <div className="absolute top-full right-0 mt-2 flex flex-col gap-2 bg-white rounded-xl shadow-2xl p-2 border border-gray-200 animate-in fade-in slide-in-from-top-2 min-w-[200px]">
+                <a
+                  href={rafaelWhatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap"
+                >
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                  Falar com Rafael
+                </a>
+                <a
+                  href={anaWhatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-foreground hover:bg-muted rounded-lg transition-colors whitespace-nowrap"
+                >
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                  Falar com Ana
+                </a>
+              </div>
+            )}
+          </div>
         </div>
       </header>
 
@@ -37,7 +67,7 @@ export default function Home() {
         <section 
           className="relative h-screen flex items-center justify-center overflow-hidden"
           style={{
-            backgroundImage: 'url(/pagina-inicial.png)',
+            backgroundImage: 'url(/paginainicial.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed'
@@ -358,7 +388,7 @@ export default function Home() {
       {/* Menu Flutuante de WhatsApp */}
       <div className="fixed bottom-6 right-6 z-50">
         {whatsappMenuOpen && (
-          <div className="absolute bottom-20 right-0 flex flex-col gap-2 bg-white rounded-2xl shadow-2xl p-2 border border-gray-200 animate-in fade-in slide-in-from-bottom-4">
+          <div className="absolute bottom-20 right-0 flex flex-col gap-2 bg-white rounded-2xl shadow-2xl p-2 border border-gray-200 animate-in fade-in slide-in-from-bottom-4 min-w-[200px]">
             <a
               href={rafaelWhatsapp}
               target="_blank"
