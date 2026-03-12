@@ -81,8 +81,8 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-black/10" />
           {/* Rodapé posicionado sobre o pergaminho */}
-          <div className="absolute bottom-0 left-0 right-0 text-center py-8">
-            <p className="font-heading font-bold text-lg text-gray-800">Guias Cadastur: Rafael Dias e Ana Lúcia</p>
+          <div className="absolute bottom-12 left-0 right-0 text-center">
+            <p className="font-heading font-bold text-lg text-gray-900 drop-shadow-md">Guias Cadastur: Rafael Dias e Ana Lúcia</p>
           </div>
         </section>
 
