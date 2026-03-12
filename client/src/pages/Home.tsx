@@ -80,6 +80,10 @@ export default function Home() {
           }}
         >
           <div className="absolute inset-0 bg-black/10" />
+          {/* Rodapé posicionado sobre o pergaminho */}
+          <div className="absolute bottom-0 left-0 right-0 text-center py-8">
+            <p className="font-heading font-bold text-lg text-gray-800">Guias Cadastur: Rafael Dias e Ana Lúcia</p>
+          </div>
         </section>
 
         {/* 3. Seção Sobre */}
@@ -387,7 +391,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-foreground py-8 text-center">
         <div className="container mx-auto px-4">
-          <p className="text-foreground font-heading font-bold text-lg">Guia Cadastur: Rafael Dias e Ana Lúcia</p>
+          <p className="text-muted text-sm">© {new Date().getFullYear()} Calangus Montanhismo. Todos os direitos reservados.</p>
         </div>
       </footer>
 
