@@ -14,22 +14,22 @@ export default function Home() {
     <div className="min-h-screen bg-background scroll-smooth">
       {/* 1. Cabeçalho com Logo */}
       <header 
-        className="fixed top-0 z-50 w-full border-b shadow-sm transition-all duration-300"
-        style={{ backgroundColor: '#e8f5e9', borderColor: '#c8e6c9' }}
+        className="fixed top-0 z-50 w-full border-b shadow-md transition-all duration-300"
+        style={{ backgroundColor: '#e6f4ea', borderColor: '#c8e6c9' }}
       >
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img src="/novalogocalangus.jpg" alt="Calangus Montanhismo Logo" className="h-14 w-auto object-contain rounded-md" />
-            <span className="font-heading font-bold text-xl tracking-tight text-black hidden sm:inline">
+            <span className="font-heading font-extrabold text-xl tracking-tight text-[#000000]">
               Calangus Montanhismo
             </span>
           </div>
           <nav className="hidden lg:flex gap-8">
-            <a href="#sobre" className="text-base font-bold uppercase text-black hover:text-primary transition-colors">Sobre</a>
-            <a href="#ecoturismo" className="text-base font-bold uppercase text-black hover:text-primary transition-colors">Ecoturismo</a>
-            <a href="#equipe" className="text-base font-bold uppercase text-black hover:text-primary transition-colors">Equipe</a>
-            <a href="#servicos" className="text-base font-bold uppercase text-black hover:text-primary transition-colors">Serviços</a>
-            <a href="#galeria" className="text-base font-bold uppercase text-black hover:text-primary transition-colors">Galeria</a>
+            <a href="#sobre" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Sobre</a>
+            <a href="#ecoturismo" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Ecoturismo</a>
+            <a href="#equipe" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Equipe</a>
+            <a href="#servicos" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Serviços</a>
+            <a href="#galeria" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Galeria</a>
           </nav>
           
           {/* Menu de Contato Superior */}
