@@ -385,9 +385,9 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-foreground py-8 text-center text-muted">
+      <footer className="bg-foreground py-8 text-center">
         <div className="container mx-auto px-4">
-          <p>Guias Cadastur: Rafael Dias e Ana Lúcia</p>
+          <p className="text-foreground font-heading font-bold text-lg">Guia Cadastur: Rafael Dias e Ana Lúcia</p>
         </div>
       </footer>
 
