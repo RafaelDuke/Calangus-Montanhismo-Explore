@@ -13,20 +13,20 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background scroll-smooth">
       {/* 1. Cabeçalho com Logo */}
-      <header className="fixed top-0 z-50 w-full bg-black/10 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+      <header className="fixed top-0 z-50 w-full bg-[#e8f5e9] border-b border-[#c8e6c9] shadow-sm transition-all duration-300">
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img src="/novalogocalangus.jpg" alt="Calangus Montanhismo Logo" className="h-14 w-auto object-contain rounded-md" />
-            <span className="font-heading font-bold text-xl tracking-tight text-white drop-shadow-md hidden sm:inline">
+            <span className="font-heading font-bold text-xl tracking-tight text-black hidden sm:inline">
               Calangus Montanhismo
             </span>
           </div>
           <nav className="hidden lg:flex gap-8">
-            <a href="#sobre" className="text-base font-bold uppercase text-white hover:text-accent transition-colors drop-shadow-md">Sobre</a>
-            <a href="#ecoturismo" className="text-base font-bold uppercase text-white hover:text-accent transition-colors drop-shadow-md">Ecoturismo</a>
-            <a href="#equipe" className="text-base font-bold uppercase text-white hover:text-accent transition-colors drop-shadow-md">Equipe</a>
-            <a href="#servicos" className="text-base font-bold uppercase text-white hover:text-accent transition-colors drop-shadow-md">Serviços</a>
-            <a href="#galeria" className="text-base font-bold uppercase text-white hover:text-accent transition-colors drop-shadow-md">Galeria</a>
+            <a href="#sobre" className="text-base font-bold uppercase text-black hover:text-primary transition-colors">Sobre</a>
+            <a href="#ecoturismo" className="text-base font-bold uppercase text-black hover:text-primary transition-colors">Ecoturismo</a>
+            <a href="#equipe" className="text-base font-bold uppercase text-black hover:text-primary transition-colors">Equipe</a>
+            <a href="#servicos" className="text-base font-bold uppercase text-black hover:text-primary transition-colors">Serviços</a>
+            <a href="#galeria" className="text-base font-bold uppercase text-black hover:text-primary transition-colors">Galeria</a>
           </nav>
           
           {/* Menu de Contato Superior */}
@@ -81,12 +81,6 @@ export default function Home() {
           }}
         >
           {/* Removido overlay escuro para não ofuscar a arte */}
-          {/* Rodapé posicionado sobre o pergaminho */}
-          <div className="absolute bottom-[5%] left-0 right-0 text-center px-4">
-            <p className="font-heading font-extrabold text-xs sm:text-sm md:text-lg lg:text-xl text-[#2d2d2d] drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)] tracking-wide">
-              Guias Cadastur: Rafael Dias e Ana Lúcia
-            </p>
-          </div>
         </section>
 
         {/* 3. Seção Sobre */}
