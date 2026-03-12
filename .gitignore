@@ -1,5 +1,8 @@
 node_modules
 dist
+build
+.replit
+replit.nix
 .DS_Store
 server/public
 vite.config.ts.*
