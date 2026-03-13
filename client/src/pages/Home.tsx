@@ -27,11 +27,13 @@ export default function Home() {
           
           {/* Menu Desktop */}
           <nav className="hidden lg:flex gap-8">
+            <a href="#home" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Home</a>
             <a href="#sobre" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Sobre</a>
             <a href="#ecoturismo" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Ecoturismo</a>
             <a href="#equipe" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Equipe</a>
             <a href="#servicos" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Serviços</a>
             <a href="#galeria" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Galeria</a>
+            <a href="#contato" className="text-base font-bold uppercase transition-colors hover:opacity-70 text-[#000000]">Contato</a>
           </nav>
           
           {/* Botão de Contato Desktop */}
@@ -87,11 +89,13 @@ export default function Home() {
         {headerContactOpen && (
           <div className="lg:hidden absolute top-full left-0 w-full bg-[#e6f4ea] border-b border-[#c8e6c9] shadow-lg animate-in slide-in-from-top-2">
             <div className="flex flex-col px-4 py-6 space-y-4">
+              <a href="#home" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Home</a>
               <a href="#sobre" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Sobre</a>
               <a href="#ecoturismo" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Ecoturismo</a>
               <a href="#equipe" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Equipe</a>
               <a href="#servicos" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Serviços</a>
               <a href="#galeria" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Galeria</a>
+              <a href="#contato" onClick={() => setHeaderContactOpen(false)} className="text-lg font-bold uppercase text-[#000000] hover:opacity-70 py-2 border-b border-[#c8e6c9]/50">Contato</a>
               
               <div className="pt-4 flex flex-col gap-3">
                 <a href={rafaelWhatsapp} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3 px-6 rounded-full w-full">
@@ -111,7 +115,8 @@ export default function Home() {
       <main className="pt-20">
         {/* 2. Hero - Responsivo */}
         <section 
-          className="relative w-full flex flex-col items-center justify-center bg-black"
+          id="home"
+          className="relative w-full flex flex-col items-center justify-center bg-black scroll-mt-20"
           style={{ minHeight: 'calc(100vh - 80px)' }}
         >
           <img 
@@ -122,7 +127,7 @@ export default function Home() {
         </section>
 
         {/* 3. Seção Sobre */}
-        <section id="sobre" className="min-h-screen flex items-center py-16 md:py-24 bg-card border-b px-5 md:px-0">
+        <section id="sobre" className="min-h-screen flex items-center py-16 md:py-24 bg-card border-b px-5 md:px-0 scroll-mt-20">
           <div className="container mx-auto">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-8 text-center">
@@ -151,7 +156,7 @@ export default function Home() {
         </section>
 
         {/* 4. Ecoturismo de Aventura */}
-        <section id="ecoturismo" className="min-h-screen flex items-center py-16 md:py-24 bg-muted/50 bg-pattern px-5 md:px-0">
+        <section id="ecoturismo" className="min-h-screen flex items-center py-16 md:py-24 bg-muted/50 bg-pattern px-5 md:px-0 scroll-mt-20">
           <div className="container mx-auto">
             <div className="max-w-3xl mx-auto text-center">
               <Leaf className="w-12 h-12 text-primary mx-auto mb-6" />
@@ -169,7 +174,7 @@ export default function Home() {
         </section>
 
         {/* 5. Cards de Guias */}
-        <section id="equipe" className="min-h-screen flex items-center py-16 md:py-24 px-5 md:px-0">
+        <section id="equipe" className="min-h-screen flex items-center py-16 md:py-24 px-5 md:px-0 scroll-mt-20">
           <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-4">
@@ -249,7 +254,7 @@ export default function Home() {
         </section>
 
         {/* 6. Serviços */}
-        <section id="servicos" className="min-h-screen flex items-center py-16 md:py-24 bg-primary text-primary-foreground relative overflow-hidden px-5 md:px-0">
+        <section id="servicos" className="min-h-screen flex items-center py-16 md:py-24 bg-primary text-primary-foreground relative overflow-hidden px-5 md:px-0 scroll-mt-20">
           {/* Decorative background element */}
           <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMSI+PHBhdGggZD0iTTM2IDM0di00aC0ydjRoLTR2Mmg0djRoMnYtNGg0di0yaC00em0wLTMwVjBoLTJ2NGgtNHYyaDR2NGgyVjZoNFY0aC00ek02IDM0di00SDR2NEgwdjJoNHY0aDJ2LTRoNHYtMkg2ek02IDRWMEg0djRIMHYyaDR2NGgyVjZoNFY0SDZ6Ii8+PC9nPjwvZz48L3N2Zz4=')]"></div>
           
@@ -304,7 +309,7 @@ export default function Home() {
         </section>
 
         {/* 7. Galeria de Fotos */}
-        <section id="galeria" className="min-h-screen flex items-center py-16 md:py-24 bg-muted/50 px-5 md:px-0">
+        <section id="galeria" className="min-h-screen flex items-center py-16 md:py-24 bg-muted/50 px-5 md:px-0 scroll-mt-20">
           <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-4">
@@ -424,11 +429,58 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* 8. Contato */}
+        <section id="contato" className="py-16 md:py-24 px-5 md:px-0 bg-card border-t scroll-mt-20">
+          <div className="container mx-auto max-w-4xl">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-4">
+                Fale Conosco
+              </h2>
+              <p className="text-muted-foreground text-lg md:text-xl">Envie uma mensagem e retornaremos o mais breve possível.</p>
+            </div>
+
+            <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
+              <form action="https://formsubmit.co/soucalangus@gmail.com" method="POST" className="space-y-6">
+                {/* FormSubmit configurations */}
+                <input type="hidden" name="_subject" value="Novo contato pelo site - Calangus Montanhismo" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-sm font-bold text-foreground">Nome Completo</label>
+                    <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Seu nome" />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-bold text-foreground">E-mail</label>
+                    <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="seu@email.com" />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="subject" className="text-sm font-bold text-foreground">Assunto</label>
+                  <input type="text" id="subject" name="subject" required className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all" placeholder="Qual o motivo do contato?" />
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-bold text-foreground">Mensagem</label>
+                  <textarea id="message" name="message" required rows={5} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none" placeholder="Escreva sua mensagem aqui..."></textarea>
+                </div>
+                
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6 rounded-xl text-lg transition-transform hover:-translate-y-1 shadow-lg hover:shadow-xl mt-4">
+                  Enviar Mensagem
+                </Button>
+              </form>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
-      <footer className="bg-foreground py-4 text-center">
+      <footer className="bg-foreground py-8 text-center text-primary-foreground">
         <div className="container mx-auto px-4">
+          <p className="text-sm font-medium">© {new Date().getFullYear()} Calangus Montanhismo. Guias Cadastur: Rafael Dias e Ana Lúcia.</p>
         </div>
       </footer>
 
